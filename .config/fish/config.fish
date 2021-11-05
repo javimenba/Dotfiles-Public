@@ -10,6 +10,7 @@ alias tree "exa -l -T --level=2 -a --icons"
 alias n "nvim"
 alias dotfiles "dotbare"
 alias dotfiles "git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
+alias fzf "fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 # Agnoster
 
 set -g theme_display_user yes
@@ -32,4 +33,5 @@ set SPACEFISH_PROMPT_ORDER time user host dir git package node ruby golang php r
 # Bobthefish
 set -g theme_color_scheme dracula
 set -g theme_nerd_fonts yes
+
 
