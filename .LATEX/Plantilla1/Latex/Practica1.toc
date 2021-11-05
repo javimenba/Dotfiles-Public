@@ -1,0 +1,11 @@
+\babel@toc {spanish}{}
+\beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Sistema LTI}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Modelos en el espacio de estados}{4}{0}{1}
+\beamer@subsectionintoc {1}{3}{Funci\IeC {\'o}n de transferencia}{4}{0}{1}
+\beamer@sectionintoc {2}{Objetivo}{5}{0}{2}
+\beamer@sectionintoc {3}{Modelado}{6}{0}{3}
+\beamer@subsectionintoc {3}{1}{Presentaci\IeC {\'o}n de la red RLC}{6}{0}{3}
+\beamer@subsectionintoc {3}{2}{Modelo en espacio de estados}{6}{0}{3}
+\beamer@subsectionintoc {3}{3}{Funci\IeC {\'o}n de transferencia}{6}{0}{3}
+\beamer@sectionintoc {4}{Scilab}{6}{0}{4}

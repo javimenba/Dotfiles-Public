@@ -1,0 +1,354 @@
+\documentclass[12pt]{article}
+%preambulo
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\parindent=0.5cm
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts,latexsym,cancel}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{bm}
+\usepackage[footnotesize]{caption} 
+\usepackage[hidelinks]{hyperref}
+\usepackage{color}
+%Configuración de pagina
+\usepackage[lmargin=2cm,rmargin=2cm,top=2.0cm,bottom=2.5cm]{geometry}
+\usepackage{flushend}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}%limpiar
+\fancyhead[C]{Ingeniería en Electrónica y Comunicaciones}
+%\fancyhead[L]{\today}
+\fancyhead[R]{\includegraphics[scale=0.04]{Imagenes/1}}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{Francisco Javier Mendoza Bautista}
+
+\renewcommand{\headrulewidth}{0.9pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\newcommand{\espacio}[1]{\vspace*{#1\baselineskip}}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+    \espacio{1}
+	\hrule height 3pt
+	\espacio{1}
+	{\Huge \textbf{Universidad de Guanajuato}}\\[0.1cm]
+	{\large \textbf{Circuitos Integrados Lineales}}\\[0.1cm]
+	{\small fj.mendozabautista@ugto.mx}
+	\espacio{0.5}
+	\hrule 
+   
+	\espacio{6}
+	\includegraphics[scale=0.5]{Imagenes/2}
+	\espacio{2}
+	
+	\textbf{Configuraciones básicas del Amplificador Operacional (OpAmp):\\
+	Seguidor, Amplificador Inversor y Amplificador No-Inversor}
+    \vfill 
+    Nua: 145645 \\
+    \today
+\end{center}
+\end{titlepage}
+\espacio{1}
+\begin{multicols}{2}
+\section{Introducción}	
+Los amplificadores operacionales son, dispositivos compactos activos y lineales de alta ganancia, diseñados para proporcionar la función de transferencia deseada. Un amplificador operacional (A.O.) está compuesto por un circuito electrónico que tiene dos entradas y una salida, como se describe mas adelante. La salida es la diferencia de las dos entradas multiplicada por un factor (G) (ganancia): Vout = G·(V+ – V-).
+
+Estos dispositivos se caracterizan por ser construidos en sus componentes más genéricos, dispuestos de modo que en cada momento se puede acceder a los puntos digamos «vitales» en donde se conectan los componentes externos cuya función es la de permitir al usuario modificar la respuesta y transferencia del dispositivo.\cite{A}
+
+Un amplificador operacional (A.O. también op-amp), es un amplificador de alta ganancia directamente acoplado, que en general se alimenta con fuentes positivas y negativas, lo cual permite que obtenga excursiones tanto por arriba como por debajo de masa o punto de referencia que se considere. Se caracteriza especialmente por que su respuesta en: frecuencia, cambio de fase y alta ganancia que se determina por la realimentación introducida externamente. Por su concepción, presenta una alta impedancia (Z) de entrada y muy baja de salida.\cite{B} Este es el símbolo con el cuál conocemos al OpAmp\eqref{Figura1}:
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.8]{Imagenes/3}
+		\caption{Símbolo del OpAmp}
+		\label{Figura1}
+	\end{figure}
+
+
+
+\section{Material}
+\begin{itemize}
+   % \setlength\itemsep{1pt}
+	\item Amplificador Operacional cuádruple TL084.
+	\item Resistores: 1k$\Omega$, 2.2K$\Omega$ y 10k$\Omega$.
+	\item Plantilla de experimentos.
+\end{itemize}
+\section{Equipo}
+\begin{itemize}
+
+	\item Francisco Javier Mendoza Bautista
+	\item Daniel Peréz Závala
+	\item Mario Pantoja Alvarez
+	\item El nuevo
+\end{itemize}
+
+\section{Marco Teórico}
+\begin{enumerate}
+	\item  \textbf{El amplificador operacional ideal.} Los fundamentos básicos del amplificador operacional ideal son relativamente fáciles. Quizás, lo mejor para entender el amplificador operacional ideal es olvidar todos los pensamientos convencionales sobre los componentes de los amplificadores, transistores, tubos u otros cualesquiera. En lugar de pensar en ellos, piensa en términos generales y considere el amplificador como una caja con sus terminales de entrada y salida. Trataremos, entonces, el amplificador en ese sentido ideal, e ignoraremos qué hay dentro de la caja.
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{Imagenes/9}
+		\caption{Amplificador idealizado.}
+		\label{Figura9}
+	\end{figure} 
+    En la figura \eqref{Figura9} se muestra un amplificador idealizado. Es un dispositivo de acoplo directo con entrada diferencial, y un único terminal de salida.\cite{C}
+	\item \textbf{Fuente dual.} Los OpAmp son dispositivos activos que requieren ser alimentados a través de una fuente de voltaje que les proporcione la energía necesaria para polarizar los componentes activos que	los integran, por esta razón, es necesario configurar 
+	una fuente dual que proporcione 510V respecto al
+	punto de referencia (GND=0V). La alimentación
+	negativa se necesita para el amplificador inversor.
+	\item \textbf{Configuración de un OpAmp no utilizado.}
+	Es importante saber, que cuando no se esta utilizando un OpAmp del circuito integrado, es necesario configurarlo como seguidor con su entrada conectada a tierra. Lo anterior, para eliminar posibles fuentes de ruido al dejar un amplificador con una impedancia de entrada y una ganancia muy elevadas. Esta configuración, se muestra en la Figura\eqref{Figura2}.
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Imagenes/4}
+	\caption{Símbolo del OpAmp}
+	\label{Figura2}
+\end{figure} 
+\item \textbf{Ganancia de un amplificador expresada
+	en dB (Decibelios).} La respuesta en frecuencia H(s) de un amplificador es expresado en dB como una función de la frecuencia y la cual es graficada  en una escala semi-logarítmica. De esta forma, la función de transferencia puede ser expresada como:
+    \begin{equation}
+    |H(s)|_{db} = 20log_{10}|H(\textit{s})|
+    \end{equation}
+    \begin{equation}
+    \hspace{1.8cm} = 20log_{10}|H(\textit{jw})|
+    \end{equation}
+    \begin{equation}
+    \hspace{2.1cm} = 20log_{10}|H(\textit{2$\pi$jf})|
+    \end{equation}
+    \item \textbf{Configuración inversora.} La Figura \eqref{Figura3} muestra la configuración inversora para un amplificador operacional, su función de transferencia está dada por:
+    \begin{equation}
+    H(\textit{s}) = \frac{-R_{2}}{R_{1}}
+    \end{equation}
+    \begin{figure}[H]
+    	\centering
+    	\includegraphics[width=0.7\linewidth]{Imagenes/5}
+    	\caption{Configuración del amplificador inversor.}
+    	\label{Figura3}
+    \end{figure} 
+    \item \textbf{Configuración no-inversora.} Esta configuración no presenta inversión de fase y se aplica para amplificadores con una ganancia mayor a la unidad. La configuración es mostrada en la Figura\eqref{Figura4}.
+    \begin{equation}
+    H(\textit{s})  = 1 + \frac{R_{2}}{R_{1}}
+    \end{equation}
+        \begin{figure}[H]
+    	\centering
+    	\includegraphics[width=0.7\linewidth]{Imagenes/6}
+    	\caption{Configuración del amplificador no-inversor.}
+    	\label{Figura4}
+    \end{figure} 
+   \item \textbf{Configuración seguidora.} Esta configuración conocida como reforzador o buffer, presenta una impedancia muy alta, que la entrada de la señal se  presenta en la terminal no inversora del OpAmp, por lo que se considera que es un acoplador de impedancia ideal. La función de transferencia es unitaria y su configuración se muestra en la figura\eqref{Figura5}.
+   \begin{equation}
+   H(\textit{s}) = 1
+   \end{equation}
+    \begin{figure}[H]
+   	\centering
+   	\includegraphics[width=0.7\linewidth]{Imagenes/7}
+   	\caption{Configuración del amplificador seguidor.}
+   	\label{Figura5}
+   \end{figure}
+\end{enumerate}
+\section{Desarrollo y Resultados}
+Diseñar los siguientes amplificadores:
+\begin{itemize}
+	\item  Un amplificador inversor. H(\textit{s})=-1.
+	\item  Un amplificador no inversor. H(\textit{s})=2.
+	\item  Un amplificador seguidor. H(\textit{s})=1.
+	\item  Un amplificador inversor. H(\textit{s})=-0.5.
+\end{itemize}
+En todos los casos, observa su comportamiento para una señal de entrada definida como: $V_{in} = 1+1sin(2\pi F)$, donde F representa la frecuencia de la componente senoidal expresada en HZ. Gráfica la respuesta en tiempo observada en el osciloscopio y grafica la respuesta en frecuencia expresada en dB en una escala semi-logarítmica.
+\subsection{Seguidor}
+		\begin{table}[H]
+			\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{f} & \textbf{$V_{i}$} & \textbf{$V_{o}$}\\
+			\hline
+			 100 & 1.04 v & 0.92 v\\
+			\hline
+             200 & 1.04 v  & 0.92 v\\
+			\hline
+			 300 & 1.04 v  & 0.92 v\\
+			\hline
+             400 & 1.04 v & 0.88 v\\
+			\hline
+			 500 & 1.04 v & 0.92 v\\
+			\hline
+             600 & 1.04 v & 0.92 v\\
+			\hline	
+			 700 & 1.04 v  & 0.92 v\\
+			\hline
+             800 & 1.04 v & 0.92 v\\
+			\hline
+             900 & 1.04 v  & 0.92 v\\
+			\hline
+			 1k & 1.04 v & 0.92 v\\
+			\hline
+             2k & 1.04 v  & 0.92 v\\
+			\hline
+			 3k & 1.04 v  & 0.92 v\\
+			\hline
+             4k & 1.04 v & 0.92 v\\
+			\hline
+			 5k & 1.04 v & 0.92 v\\
+			\hline
+             6k & 1.04 v & 0.92 v\\
+			\hline	
+			 7k & 1.04 v  & 0.92 v\\
+			\hline
+             8k & 1.04 v & 0.92 v\\
+			\hline
+             9k & 1.04 v  & 0.92 v\\
+			\hline													
+		\end{tabular}
+	\end{center}
+	\caption{Tabla de resultados Seguidor}
+	\end{table}
+	    \begin{figure}[H]
+    	\centering
+    	\includegraphics[width=\linewidth]{Imagenes/Seguidor.png} 
+    	\caption{Gráfica de Seguidor.}
+    	\label{Figura6}
+    \end{figure} 
+\subsection{AMP. Inversor}
+		\begin{table}[H]
+			\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{f} & \textbf{$V_{i}$} & \textbf{$V_{o}$}\\
+			\hline
+			 100 & 1 v & 10.8 v\\
+			\hline
+             200 & 1 v  & 10.4 v\\
+			\hline
+			 300 & 1 v  & 10.4 v\\
+			\hline
+             400 & 1 v & 10.4 v\\
+			\hline
+			 500 & 1 v & 10.4 v\\
+			\hline
+             600 & 1 v & 10.4 v\\
+			\hline	
+			 700 & 1 v  & 10.4 v\\
+			\hline
+             800 & 1 v & 10.4 v\\
+			\hline
+             900 & 1 v  & 10.4 v\\
+			\hline
+			 1k & 1 v & 10.8 v\\
+			\hline
+             2k & 1 v  & 10.8 v\\
+			\hline
+			 3k & 1 v  & 10.8 v\\
+			\hline
+             4k & 1 v & 10.8 v\\
+			\hline
+			 5k & 1 v & 10.8 v\\
+			\hline
+             6k & 1 v & 10.8 v\\
+			\hline	
+			 7k & 1 v  & 10.8 v\\
+			\hline
+             8k & 1 v & 10.8 v\\
+			\hline
+             9k & 1 v  & 10.8 v\\
+			\hline													
+		\end{tabular}
+	\end{center}
+	\caption{Tabla de resultados AMP. Inversor}
+	\end{table}
+		\begin{figure}[H]
+    	\centering
+    	\includegraphics[width=\linewidth]{Imagenes/AmpINVERSOR.png} 
+    	\caption{Gráfica de AMP.Inversor.}
+    	\label{Figura7}
+    \end{figure} 
+\subsection{AMP. No Inversor}
+		\begin{table}[H]
+			\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{f} & \textbf{$V_{i}$} & \textbf{$V_{o}$}\\
+			\hline
+			 100 & 1.04 v & 11.2 v\\
+			\hline
+             200 & 1.04 v  & 11.2 v\\
+			\hline
+			 300 & 1.04 v  & 11.2 v\\
+			\hline
+             400 & 1.04 v & 11.2 v\\
+			\hline
+			 500 & 1.04 v & 11.2 v\\
+			\hline
+             600 & 1.04 v & 11.2 v\\
+			\hline	
+			 700 & 1.04 v  & 11.2 v\\
+			\hline
+             800 & 1.04 v & 11.2 v\\
+			\hline
+             900 & 1.04 v  & 11.4 v\\
+			\hline
+			 1k & 1.04 v & 11.2 v\\
+			\hline
+             2k & 1.04 v  & 11.6 v\\
+			\hline
+			 3k & 1.04 v  & 11.6 v\\
+			\hline
+             4k & 1.04 v & 12 v\\
+			\hline
+			 5k & 1.04 v & 12.4 v\\
+			\hline
+             6k & 1.04 v & 12.4 v\\
+			\hline	
+			 7k & 1.04 v  & 12.4 v\\
+			\hline
+             8k & 1.04 v & 12.4 v\\
+			\hline
+             9k & 1.04 v  & 12.4 v\\
+			\hline													
+		\end{tabular}
+	\end{center}
+	\caption{Tabla de resultados AMP. No Inversor}
+	\end{table}	
+		\begin{figure}[H]
+    	\centering
+    	\includegraphics[width=\linewidth]{Imagenes/AmpNOINVERSOR.png} 
+    	\caption{Gráfica de AMP.No Inversor.}
+    	\label{Figura8}
+    \end{figure}
+ 	\begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.8\linewidth]{Imagenes/8.png} 
+ 	\caption{Conexión Circuito-Osciloscopio }
+ 	\label{Figura10}
+ \end{figure}
+\begin{center}
+\section{Conclusiones}
+En esta práctica aprendimos los conceptos básicos sobre los Amplificadores operacionales en este caso: seguidor, inversor y no inversor. 
+\footnotesize
+\begin{thebibliography}{1}
+\bibitem{A}
+V. García. (2010, Sep. 9).El Amplificador Operacional(2nd ed.)[Online].\\Available:
+\textcolor{blue}{\url{https://www.diarioelectronicohoy.com/blog/el-amplificador-operacional}}
+\bibitem{B}
+``Configuraciones básicas del amplificador operaciona'', class note for IILI06024,Universidad de Guanajuato, 2019
+\bibitem{C}
+ J. Martorell. (2007, May. 12).El Amplificador Operacional(1er ed.)[Online].\\Available: \textcolor{blue}{\url{http://www.ifent.org/temas/amplificadores_operacionales.asp}}
+ \bibitem{D}
+ F. Mecafenix. (2017, Apr. 19).Amplificador operacional ¿Que es y sus configuraciones?(3er ed.)[Online].\\Available: \textcolor{blue}{\url{https://www.ingmecafenix.com/electronica/amplificador-operacional/}}
+  \bibitem{E}
+ H. Torres. (2017, Dec. 21).Amplificador Operacional – qué es y sus configuraciones más usadas(2nd ed.)[Online].\\Available: \textcolor{blue}{\url{https://hetpro-store.com/TUTORIALES/amplificador-operacional/}}
+\end{thebibliography}
+
+\end{center}    
+
+
+\end{multicols}
+\end{document}

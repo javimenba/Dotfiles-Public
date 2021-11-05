@@ -1,0 +1,155 @@
+\documentclass[10pt]{beamer}
+\usetheme[
+%%% option passed to the outer theme
+%    progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
+  ]{Feather}
+  
+% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
+
+% Change the bar colors:
+%\setbeamercolor{Feather}{fg=red!20,bg=red}
+
+% Change the color of the structural elements:
+%\setbeamercolor{structure}{fg=red}
+
+% Change the frame title text color:
+%\setbeamercolor{frametitle}{fg=blue}
+
+% Change the normal text color background:
+%\setbeamercolor{normal text}{fg=black,bg=gray!10}
+
+%-------------------------------------------------------
+% INCLUDE PACKAGES
+%-------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage[document]{ragged2e}
+\usepackage{graphicx}
+\usepackage[rightcaption]{sidecap}
+\usepackage[none]{hyphenat}
+\usepackage{animate,media9,movie15}
+\usepackage[ ]{hyperref}
+
+%-------------------------------------------------------
+% DEFFINING AND REDEFINING COMMANDS
+%-------------------------------------------------------
+
+% colored hyperlinks
+\newcommand{\chref}[2]{
+  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
+}
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+
+\title[] % [] is optional - is placed on the bottom of the sidebar on every slide
+{ % is placed on the title page
+      \textbf{Ventanas Inteligentes}
+}
+
+\subtitle[Ventanas Inteligentes]
+{
+      \textbf{}
+}
+
+\author[Teoria Electromagnetica]
+{      Francisco Javier MendozaBautista
+	{\ttfamily }
+}
+
+\institute[]
+{
+     Universidad de Guanajuato \\Ingeniería Electrónica\\
+  
+  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
+}
+
+\date{\today}
+
+%-------------------------------------------------------
+% THE BODY OF THE PRESENTATION
+%-------------------------------------------------------
+
+\begin{document}
+
+%-------------------------------------------------------
+% THE TITLEPAGE
+%-------------------------------------------------------
+
+{\1% % this is the name of the PDF file for the background
+\begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page, noframenumbering removes the numbering of this frame only
+  \titlepage % call the title page information from above
+\end{frame}}
+
+
+\begin{frame}{Contenido}{}
+\tableofcontents
+\end{frame}
+
+%-------------------------------------------------------
+\section{Ventanas inteligentes}
+%-------------------------------------------------------
+\subsection{¿Que son las ventanas inteligentes?}
+\begin{frame}{Ventanas inteligentes}{¿Que son las ventanas inteligentes?}
+
+\begin{columns}
+	\column{0.5\textwidth}
+	\justify
+	Se trata de unas ventanas que tienen incorporado un sistema que en cuestión de segundos, mediante un interruptor, se puede activar una tecnología que provoca unas reacciones químicas y físicas haciendo que el vidrio transparente se convierta en opaco
+	\column{0.5\textwidth}
+    \begin{figure}
+    	\includegraphics[scale=0.5]{Imagenes/1}
+    	\caption{Ventanas inteligentes}
+    \end{figure}
+\end{columns}
+\end{frame}
+
+
+
+
+
+
+
+\section{Demostración}
+\subsection{Video}
+\begin{frame}{Demostración}{Video}
+   
+
+
+
+\begin{figure}		
+   		\includemovie[
+   		poster,
+   		autoplay,
+   	    externalviewer,
+   		inline=false,
+   		text={\small(click)}
+   		]{6cm}{6cm}{video.mp4}
+   		
+   		%    \flashmovie{Wildlife.wmv}
+   	\end{figure}
+ 
+
+\end{frame}
+
+
+
+
+\section{Bibliografía}
+\begin{frame}{Bibliografía}
+          	\begin{thebibliography}{1}
+          	
+          	
+          	\bibitem{IEEEhowto:kopka}
+          	 Construcción 21 España, Ventanas inteligentes 
+          	 \textcolor{blue}{\url{www.construction21.org/espana/articles/es/que-son-las-ventanas-inteligentes.html}}
+          	
+          \end{thebibliography}
+\end{frame}
+
+
+\end{document}
