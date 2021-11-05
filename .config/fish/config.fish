@@ -8,7 +8,8 @@ alias cat "ccat -G Plaintext="blink" -G Keyword="purple" -G String="darkgreen" -
 alias ls "exa --group-directories-first -l -g --icons"
 alias tree "exa -l -T --level=2 -a --icons"
 alias n "nvim"
-alias dotfiles "git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias dotfiles "dotbare"
+alias dotfiles "git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
 # Agnoster
 
 set -g theme_display_user yes
