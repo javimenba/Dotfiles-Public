@@ -91,7 +91,7 @@ primary_widgets = [
     powerline('color3', 'color1'),
 
     
-    icon(bg="color3", text='墳'),  # Icon: nf-fa-volume_up 
+    icon(bg="color3", text='墳 '),  # Icon: nf-fa-volume_up 
     
     widget.Volume(**base(bg='color3'), padding=5),
     
