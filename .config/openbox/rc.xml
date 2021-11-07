@@ -360,7 +360,7 @@
           <enabled>true</enabled>
           <name>File Explorer</name>
         </startupnotify>
-        <command>pcmanfm</command>
+        <command>nautilus</command>
       </action>
     </keybind>
     <!-- Redshift -->
