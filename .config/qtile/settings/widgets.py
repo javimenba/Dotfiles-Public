@@ -68,12 +68,13 @@ primary_widgets = [
 
     separator(),
 
-    powerline('color4', 'dark'),
-
-    icon(bg="color4", text=' '), # Icon: nf-fa-download
-    
+    #powerline('color4', 'dark'),
+    powerline('color3', 'dark'),
+  #  icon(bg="color4", text=' '), # Icon: nf-fa-download
+   icon(bg="color3", text=' '), # Icon: nf-fa-download
     widget.CheckUpdates(
-        background=colors['color4'],
+     #   background=colors['color4'],
+        background=colors['color3'],
         colour_have_updates=colors['text'],
         colour_no_updates=colors['text'],
         no_update_string='0',
@@ -82,14 +83,14 @@ primary_widgets = [
         custom_command='checkupdates',
     ),
 
-    powerline('color3', 'color4'),
-
-    
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
-    
-    widget.Net(**base(bg='color3'), interface='wlp2s0'),
-
+   # powerline('color3', 'color4'),
     powerline('color2', 'color3'),
+    
+  #  icon(bg="color3", text=' '),  # Icon: nf-fa-feed
+    
+  #  widget.Net(**base(bg='color3'), interface='wlp2s0'),
+
+  #  powerline('color2', 'color3'),
 
     
     icon(bg="color2", text='墳 '),  # Icon: nf-fa-volume_up 
