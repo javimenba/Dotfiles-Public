@@ -81,28 +81,28 @@ primary_widgets = [
         custom_command='checkupdates',
     ),
 
-    powerline('color1', 'color4'),
+    powerline('color3', 'color4'),
 
     
-    icon(bg="color1", text=' '),  # Icon: nf-fa-feed
+    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
     
-    widget.Net(**base(bg='color1'), interface='wlp2s0'),
+    widget.Net(**base(bg='color3'), interface='wlp2s0'),
 
-    powerline('color3', 'color1'),
-
-    
-    icon(bg="color3", text='墳 '),  # Icon: nf-fa-volume_up 
-    
-    widget.Volume(**base(bg='color3'), padding=5),
-    
     powerline('color2', 'color3'),
 
+    
+    icon(bg="color2", text='墳 '),  # Icon: nf-fa-volume_up 
+    
+    widget.Volume(**base(bg='color2'), padding=5),
+    
+    powerline('color4', 'color2'),
 
-    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
 
-    widget.CurrentLayout(**base(bg='color2'), padding=5),
+    widget.CurrentLayoutIcon(**base(bg='color4'), scale=0.65),
 
-    powerline('color1', 'color2'),
+    widget.CurrentLayout(**base(bg='color4'), padding=5),
+
+    powerline('color1', 'color4'),
 
     icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
 
