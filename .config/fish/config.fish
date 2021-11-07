@@ -28,10 +28,12 @@ set SPACEFISH_USER_SHOW always
 set SPACEFISH_USER_COLOR green
 set SPACEFISH_HOST_SHOW always
 set SPACEFISH_PROMPT_ORDER time user host dir git package node ruby golang php rust haskell julia elixir docker aws venv conda pyenv dotnet kubecontext exec_time line_sep battery vi_mode jobs exit_code char 
-#set -g theme_nerd_fonts yes
+set -g theme_nerd_fonts yes
 #
 # Bobthefish
-set -g theme_color_scheme dracula
+set -g theme_color_scheme  dracula
+set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
+set -g theme_date_format "+%a %H:%M"
 
 
