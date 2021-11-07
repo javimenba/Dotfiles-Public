@@ -28,7 +28,8 @@ def powerline(fg="light", bg="dark"):
         **base(fg, bg),
         text="", # Icon: nf-oct-triangle_left
         fontsize=37,
-        padding=-2
+        padding=-3
+        #padding=-2
     )
 
 
@@ -132,7 +133,8 @@ secondary_widgets = [
 ]
 
 widget_defaults = {
-    'font': 'UbuntuMono Nerd Font Bold',
+    #'font': 'UbuntuMono Nerd Font Bold',
+    'font': 'VictorMono Nerd Font Bold',
     'fontsize': 14,
     'padding': 1,
 }
