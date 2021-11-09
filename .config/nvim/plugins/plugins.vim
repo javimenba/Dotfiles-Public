@@ -15,4 +15,5 @@
     source $HOME/.config/nvim/plug-config/which-key.vim
     source $HOME/.config/nvim/plug-config/spell.vim
     source $HOME/.config/nvim/plug-config/telescope.vim
+    source $HOME/.config/nvim/plug-config/MarkdownPreview.vim
 

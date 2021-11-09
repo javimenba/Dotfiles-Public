@@ -72,6 +72,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'tpope/vim-fugitive'
 
         Plug 'preservim/vim-textobj-quote'
+        Plug 'kana/vim-textobj-user'
         Plug 'tpope/vim-rhubarb'
         Plug 'voldikss/vim-floaterm'
 
@@ -83,6 +84,12 @@ call plug#begin('~/.config/nvim/plugged')
         Plug  'github/copilot.vim'
 
         Plug 'pandysong/ghost-text.vim'
+
+        Plug 'iamcco/mathjax-support-for-mkdp'
+        Plug 'iamcco/markdown-preview.vim'
+        Plug 'DavidAnson/markdownlint'
+
+    
     endif
 
 call plug#end()
