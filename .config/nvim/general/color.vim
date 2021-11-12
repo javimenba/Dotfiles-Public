@@ -1,9 +1,6 @@
-syntax on
-
-" checks if your terminal has 24-bit color support
-"if (has("termguicolors"))
-"    set termguicolors
-"endif
+" Syntax theme "{{{
+" ---------------------------------------------------------------------
+" true color
 if exists("&termguicolors") && exists("&winblend")
   syntax enable
   set termguicolors
@@ -14,5 +11,7 @@ if exists("&termguicolors") && exists("&winblend")
   " Use NeoSolarized
   let g:neosolarized_termtrans=1
   runtime ./colors/NeoSolarized.vim
-  "colorscheme  ThNeoSolarized
+  colorscheme NeoSolarized
 endif
+
+"}}}

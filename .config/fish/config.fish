@@ -1,6 +1,6 @@
 neofetch
 set fish_greeting ""
-
+set -gx TERM xterm-256color
 # Aliases
 
 alias grep "grep --color=auto"
@@ -37,5 +37,18 @@ set -g theme_color_scheme  solarized-dark
 set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
 set -g theme_date_format "+%a %H:%M"
+set -g fish_prompt_pwd_dir_length 1
+set -g theme_display_user ssh
+set -g theme_display_hostname ssh
+set -g theme_display_user yes
+set -g theme_hide_hostname no
+set -g theme_hostname always
 
 
+# NodeJS
+set -gx PATH node_modules/.bin $PATH
+
+set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
+if test -f $LOCAL_CONFIG
+  source $LOCAL_CONFIG
+end

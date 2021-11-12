@@ -1,47 +1,70 @@
-" Remap escape
-nnoremap <C-c> <Esc>
-inoremap jk <Esc>
-inoremap kj <Esc>
+" Description: Keymaps
 
-" Use alt + hjkl to resize windows
-nnoremap <M-j> :resize -2<CR>
-nnoremap <M-k> :resize +2<CR>
-nnoremap <M-h> :vertical resize -2<CR>
-nnoremap <M-l> :vertical resize +2<CR>
+nnoremap <S-C-p> "0p
+" Delete without yank
+nnoremap <leader>d "_d
+nnoremap x "_x
 
-" Alternate way to save
-nnoremap <C-s> :w!<CR>
-" Alternate way to quit and save
-nnoremap <C-q> :q!<CR>
+" Increment/decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
 
-" TAB in general mode will move to next buffer
-nnoremap <TAB> :bnext<CR>
-" SHIFT-TAB will go to prev buffer
-nnoremap <S-TAB> :bprevious<CR>
+" Delete a word backwards
+nnoremap dw vb"_d
 
-" Close current buffer
+" Select all
+nmap <C-a> gg<S-v>G
+
+" Save with root permission
+command! W w !sudo tee > /dev/null %
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+"-----------------------------
+" Tabs
+
+" Open current directory
+nnoremap te :tabedit 
+nnoremap <S-Tab> :tabprev<Return>
+nnoremap <Tab> :tabnext<Return>
 nnoremap <C-b> :bd<CR>
+"------------------------------
+" Windows
 
-" Better tabbing
-vnoremap < <gv
-vnoremap > >gv
+" Split window
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+" Move window
+nmap <Space> <C-w>w
+map s<left> <C-w>h
+map s<up> <C-w>k
+map s<down> <C-w>j
+map s<right> <C-w>l
+map sh <C-w>h
+map sk <C-w>k
+map sj <C-w>j
+map sl <C-w>l
+" Resize window
+nmap <C-w><left> <C-w><
+nmap <C-w><right> <C-w>>
+nmap <C-w><up> <C-w>+
+nmap <C-w><down> <C-w>-
 
-" Move selected line / block of text in visual mode
-" shift + k to move up
-" shift + j to move down
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
-
-" Better window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 
-
-"LATEX
-"nnoremap <C-l> :LLPStartPreview<CR>
+" Javier
+nnoremap <C-q> :q! <CR>
+nnoremap <C-s> :w! <CR>
 
 noremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
 noremap \i cw\begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><Esc>3kA\item<Space>
@@ -52,30 +75,7 @@ noremap \l  cw\left[<Space><Space>\right]
 
 nnoremap <F11> :set conceallevel=0 <CR>
 nnoremap <F12> :set conceallevel=1 <CR>
-"Bracey
-nnoremap  \bi :Bracey
-nnoremap  \bs :BraceyStop
-nnoremap  \br :BraceyReload
 
-"HTML
-"noremap ,a cw style="text-align:<Space><Space>"
-
-"Terminal 
-"nnoremap  <A-CR> :botright vertical terminal <CR>
-
-"nnoremap  <C-c> :term pdflatex *.tex<CR>
-" nnoremap  <C-x> :term zathura  *.pdf<CR>
-"Mapeos de telcas
-:imap ii <Esc>
-"Así se define una función
-"function FuncionInsertaFecha()
-"         :LLPStartPreview
-"         :w
-"endfunction
-"command Fecha call FuncionInsertaFecha()
-
-" Coc
-"Files recent
 nnoremap <C-h> :Hist<CR>
 "nnoremap  <C-h> :Telescope find_files<cr>
 

@@ -1,95 +1,58 @@
-call plug#begin('~/.config/nvim/plugged')
-    " Comment code
-    Plug 'tpope/vim-commentary'
+if has("nvim")
+  let g:plug_home = stdpath('data') . '/plugged'
+endif
 
-    if exists('g:vscode')
-        " Easy motion for VSCode
-        Plug 'asvetliakov/vim-easymotion'
-    else
-        " Syntax support
-        Plug 'sheerun/vim-polyglot'
-        " Autopairs
-        Plug 'jiangmiao/auto-pairs'
-        " File explorer
-        Plug 'scrooloose/NERDTree'  
-        " Icons
-        Plug 'ryanoasis/vim-devicons'
+call plug#begin()
 
-        " Intellisense
-        Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        " Lspsaga
-        "Plug 'neovim/nvim-lspconfig'
-        "Plug 'glepnir/lspsaga.nvim'
-        "Plug 'hrsh7th/nvim-compe'
-        "Plug 'nvim-lua/completion-nvim'
-        "Plug 'nvim-lua/diagnostic-nvim'
-        " Airline
-        Plug 'vim-airline/vim-airline'
-        Plug 'vim-airline/vim-airline-themes'
-        " Indent guides
-        Plug 'Yggdroot/indentLine' 
-        " Git integration
-        Plug 'mhinz/vim-signify'
-        " Autoclose tags
-        Plug 'alvan/vim-closetag'
-        " Ranger
-        Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-        " Fzf
-        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-        Plug 'junegunn/fzf.vim'
-        Plug 'airblade/vim-rooter'
-        " Prettier
-        Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
-        " Themes
-        Plug 'joshdick/onedark.vim'
-        Plug 'kaicataldo/material.vim'
-        Plug 'tomasiser/vim-code-dark'
-        Plug 'crusoexia/vim-monokai'
-        Plug 'ayu-theme/ayu-vim'
-        Plug 'dracula/vim', { 'as': 'dracula' }
-        Plug 'kyoz/purify', { 'rtp': 'vim' }
-        Plug 'mhartington/oceanic-next'
-        Plug 'rakr/vim-one'
-        Plug 'Rigellute/shades-of-purple.vim' 
+if has("nvim")
+  Plug 'hoob3rt/lualine.nvim'
+  Plug 'kristijanhusak/defx-git'
+  Plug 'kristijanhusak/defx-icons'
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim51' }
+  Plug 'folke/lsp-colors.nvim'
+  Plug 'L3MON4D3/LuaSnip'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'onsails/lspkind-nvim'
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-media-files.nvim'
+  Plug 'windwp/nvim-autopairs'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+  "Plug 'vim-airline/vim-airline'
+  "Plug 'vim-airline/vim-airline-themes'
+  Plug 'mhinz/vim-signify'
+  Plug 'alvan/vim-closetag'
+  "Latex
+  Plug 'vim-latex/vim-latex' 
+  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+  Plug 'lervag/vimtex'
+  Plug 'gi1242/vim-tex-autoclose'
+  Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+  Plug 'preservim/vim-textobj-quote'
+  Plug 'kana/vim-textobj-user'
+  Plug 'tpope/vim-rhubarb'
+  Plug 'voldikss/vim-floaterm'
+  Plug 'iamcco/mathjax-support-for-mkdp'
+  Plug 'iamcco/markdown-preview.vim'
+  Plug 'DavidAnson/markdownlint'
+  "Git Copilot
+  Plug  'github/copilot.vim'
+endif
 
-
-        "Javis
-        Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}   
-        Plug 'tell-k/vim-autopep8'
-
-        "Latex
-        Plug 'vim-latex/vim-latex' 
-        Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-        Plug 'lervag/vimtex'
-        Plug 'gi1242/vim-tex-autoclose'
-
-        Plug 'junegunn/goyo.vim'  
-        Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-        Plug 'tranvansang/octave.vim'
-        Plug 'jiangmiao/auto-pairs' 
-        Plug 'sirver/ultisnips'
-        Plug 'tpope/vim-fugitive'
-
-        Plug 'preservim/vim-textobj-quote'
-        Plug 'kana/vim-textobj-user'
-        Plug 'tpope/vim-rhubarb'
-        Plug 'voldikss/vim-floaterm'
-
-        Plug 'glepnir/dashboard-nvim'
-
-
-        Plug 'nvim-lua/plenary.nvim'
-        Plug 'nvim-telescope/telescope.nvim'
-        Plug  'github/copilot.vim'
-
-        Plug 'pandysong/ghost-text.vim'
-
-        Plug 'iamcco/mathjax-support-for-mkdp'
-        Plug 'iamcco/markdown-preview.vim'
-        Plug 'DavidAnson/markdownlint'
-
-    
-    endif
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 call plug#end()
