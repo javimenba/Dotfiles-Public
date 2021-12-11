@@ -64,10 +64,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Terminal
     ([mod], "Return", lazy.spawn("alacritty")),
-
+    ([mod], "r", lazy.spawn("tilix")),
+    
     # Redshift
-    ([mod], "r", lazy.spawn("redshift -O 2400")),
-    ([mod, "shift"], "r", lazy.spawn("redshift -x")),
+     ([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
     # Screenshot
     ([mod], "s", lazy.spawn("Spotify")),

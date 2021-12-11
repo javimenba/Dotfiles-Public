@@ -1,6 +1,3 @@
-" Syntax theme "{{{
-" ---------------------------------------------------------------------
-" true color
 if exists("&termguicolors") && exists("&winblend")
   syntax enable
   set termguicolors
@@ -10,8 +7,6 @@ if exists("&termguicolors") && exists("&winblend")
   set background=dark
   " Use NeoSolarized
   let g:neosolarized_termtrans=1
-  runtime ./config/nvim/themes/NeoSolarized.vim
-  "colorscheme NeoSolarized
-  endif
-
-"}}}
+  runtime ./themes/NeoSolarized.vim
+  colorscheme NeoSolarized
+endif

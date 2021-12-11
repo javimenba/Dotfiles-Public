@@ -113,6 +113,7 @@
 " Default option values"{{{
 " ---------------------------------------------------------------------
 
+"colorscheme NeoSolarized
 " Font styles:
 let g:neosolarized_bold = get(g:, "neosolarized_bold", 1)
 let g:neosolarized_italic = get(g:, "neosolarized_italic", 0)
@@ -921,7 +922,8 @@ endif
 "
 autocmd GUIEnter * if (has('gui_running')) | exe "colorscheme " . g:colors_name | endif
 "}}}
-
+"
+"colorscheme NeoSolarized
 " License "{{{
 " ---------------------------------------------------------------------
 "

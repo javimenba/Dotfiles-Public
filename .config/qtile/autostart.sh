@@ -4,6 +4,7 @@
 export PATH=$HOME/.local/bin:$PATH
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+nm-applet &
 setxkbmap latam &
 udiskie -t &
 #cbatticon -u 5 &

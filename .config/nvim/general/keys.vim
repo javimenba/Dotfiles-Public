@@ -30,7 +30,7 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-"-----------------------------
+
 " Tabs
 
 " Open current directory
@@ -50,7 +50,7 @@ map s<left> <C-w>h
 map s<up> <C-w>k
 map s<down> <C-w>j
 map s<right> <C-w>l
-map sh <C-w>h
+nmap sh <C-w>h
 map sk <C-w>k
 map sj <C-w>j
 map sl <C-w>l
@@ -66,6 +66,12 @@ nmap <C-w><down> <C-w>-
 nnoremap <C-q> :q! <CR>
 nnoremap <C-s> :w! <CR>
 
+" Use alt + hjkl to resize windows
+nnoremap <M-j> :resize -2<CR>
+nnoremap <M-k> :resize +2<CR>
+nnoremap <M-h> :vertical resize -2<CR>
+nnoremap <M-l> :vertical resize +2<CR>
+
 noremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
 noremap \i cw\begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><Esc>3kA\item<Space>
 noremap \e cw<Space>\begin{equation}<CR><Enter>\end{equation}<Enter><Enter><Esc>3kA<Space><Space><Space><Space>        
@@ -73,8 +79,8 @@ noremap \p1 :-1read $HOME/.LATEX/Plantilla1/Latex/Plantilla1.tex <CR>
 noremap \p2 :-1read $HOME/.LATEX/Plantilla2/Feathertheme.tex <CR> 
 noremap \l  cw\left[<Space><Space>\right]
 
-nnoremap <F11> :set conceallevel=0 <CR>
-nnoremap <F12> :set conceallevel=1 <CR>
+nnoremap <F4> :set conceallevel=0 <CR>
+nnoremap <F5> :set conceallevel=1 <CR>
 
 nnoremap <C-h> :Hist<CR>
 "nnoremap  <C-h> :Telescope find_files<cr>

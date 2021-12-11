@@ -25,9 +25,13 @@ if has("nvim")
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'kosayoda/nvim-lightbulb'
   Plug 'nvim-telescope/telescope-media-files.nvim'
   Plug 'windwp/nvim-autopairs'
+  "javier
+  Plug 'tpope/vim-commentary'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -50,6 +54,10 @@ if has("nvim")
   Plug 'DavidAnson/markdownlint'
   "Git Copilot
   Plug  'github/copilot.vim'
+  "themes
+  Plug 'kaicataldo/material.vim'
+  "Plug 'iCyMind/NeoSolarized'
+
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }

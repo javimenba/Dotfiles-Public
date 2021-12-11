@@ -13,6 +13,7 @@ let g:bracey_server_port='5500'
 let g:dashboard_default_executive ='fzf'
 let g:deoplete#enable_at_startup = 1
 
+let g:livepreview_cursorhold_recompile = 0
 
 set number relativenumber
 set colorcolumn=81
@@ -44,7 +45,21 @@ set timeoutlen=500
 " Salto de linea automatico
 set wrap linebreak
 
-
+" defx
+let g:defx_icons_enable_syntax_highlight = 1
+let g:defx_icons_column_length = 1
+let g:defx_icons_directory_icon = ''
+let g:defx_icons_mark_icon = '*'
+let g:defx_icons_copy_icon = ''
+let g:defx_icons_link_icon = ''
+let g:defx_icons_move_icon = ''
+let g:defx_icons_parent_icon = ''
+let g:defx_icons_default_icon = ''
+let g:defx_icons_directory_symlink_icon = ''
+" Options below are applicable only when using "tree" feature
+let g:defx_icons_root_opened_tree_icon = ''
+let g:defx_icons_nested_opened_tree_icon = ''
+let g:defx_icons_nested_closed_tree_icon = ''
 
 syntax enable
 filetype on
@@ -125,6 +140,7 @@ highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
 
 highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
 
+highlight Comment cterm=italic
 augroup BgHighlight
   autocmd!
   autocmd WinEnter * set cul
